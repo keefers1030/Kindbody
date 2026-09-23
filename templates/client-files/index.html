@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Files</title>
+<link rel="icon" href="../../assets/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="stylesheet" href="../../tokens/fonts.css">
+<link rel="stylesheet" href="../../tokens/colors.css">
+<link rel="stylesheet" href="../../tokens/typography.css">
+<style>
+/* Fallbacks so the sample still reads correctly if the token files aren't alongside it. */
+:root{
+  --navy:var(--kb-navy,#272A5E);--cream:var(--kb-cream,#EFE9E2);--cream-deep:var(--kb-cream-deep,#E2DAD0);
+  --yellow:var(--kb-yellow,#F9E168);--yellow-soft:var(--kb-yellow-soft,#FDF3C9);--white:#fff;
+  --navy-soft:var(--kb-navy-soft,#6E708F);--line:#E3DDD4;
+  --sans:var(--font-sans,"Gotham",system-ui,sans-serif);--display:var(--font-display,"Domaine Display",Georgia,serif);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--navy);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:64px 32px 96px}
+
+/* ---------- Level 1: section intro ---------- */
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-soft)}
+h1{margin:12px 0 0;font-family:var(--display);font-weight:700;font-size:clamp(30px,3.4vw,42px);line-height:1.08}
+.lede{margin:14px 0 0;max-width:62ch;font-size:16.5px;line-height:1.55}
+
+/* ---------- Level 2: summary ---------- */
+.summary{margin-top:36px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 2.2fr;gap:12px}
+.stat{background:var(--white);border-radius:14px;padding:18px 20px}
+.stat b{display:block;font-family:var(--display);font-size:34px;line-height:1}
+.stat span{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:13px;font-weight:500}
+.mix{background:var(--white);border-radius:14px;padding:18px 20px}
+.mix-bar{display:flex;height:12px;border-radius:999px;overflow:hidden;margin-top:12px;background:var(--cream)}
+.mix-bar i{display:block;height:100%}
+.mix-key{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px}
+.mix-key span{display:inline-flex;align-items:center;gap:6px}
+.mix-key i{width:10px;height:10px;border-radius:3px;display:block}
+
+/* ---------- Toolbar ---------- */
+.toolbar{position:sticky;top:0;z-index:5;margin:28px -32px 0;padding:14px 32px;background:color-mix(in srgb,var(--cream) 92%,transparent);backdrop-filter:blur(8px);display:flex;flex-wrap:wrap;gap:12px;align-items:center;border-bottom:1px solid transparent}
+.toolbar.stuck{border-bottom-color:var(--line)}
+.search{flex:1 1 260px;display:flex;align-items:center;gap:10px;background:var(--white);border:2px solid var(--line);border-radius:999px;padding:0 16px;height:44px}
+.search:focus-within{border-color:var(--navy)}
+.search input{flex:1;border:0;outline:0;font:inherit;font-size:15px;color:var(--navy);background:transparent}
+.seg{display:inline-flex;background:var(--white);border:2px solid var(--line);border-radius:999px;padding:3px}
+.seg button{font:inherit;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);background:transparent;border:0;border-radius:999px;padding:9px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--navy);color:var(--cream)}
+.result-count{font-size:13px;color:var(--navy-soft);min-width:9ch;text-align:right}
+
+/* ---------- Level 3: groups ---------- */
+.group{margin-top:28px;background:var(--white);border-radius:18px;overflow:hidden}
+.group>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:22px 26px}
+.group>summary::-webkit-details-marker{display:none}
+.g-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.g-icon i{width:22px;height:22px;display:block;background:var(--navy)}
+.g-title{font-size:19px;font-weight:700}
+.g-desc{margin-top:4px;font-size:14px;line-height:1.45;color:var(--navy-soft)}
+.g-meta{display:flex;align-items:center;gap:14px;font-size:13px;white-space:nowrap}
+.g-meta .chev{width:18px;height:18px;transition:transform .2s;background:var(--navy);-webkit-mask:url('https://unpkg.com/lucide-static@0.544.0/icons/chevron-down.svg') center/contain no-repeat;mask:url('https://unpkg.com/lucide-static@0.544.0/icons/chevron-down.svg') center/contain no-repeat}
+.group[open] .chev{transform:rotate(180deg)}
+.g-body{padding:0 26px 26px}
+.retire-note{margin:0 0 16px;padding:12px 14px;border-radius:10px;background:var(--yellow-soft);font-size:13.5px;line-height:1.45}
+
+/* Client cards (benefit pages) */
+.clients{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.client{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.client h3{margin:0;font-size:15px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.dup{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);background:var(--yellow);border-radius:999px;padding:3px 8px;white-space:nowrap}
+.client ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+
+/* Page rows */
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.rows li{border-bottom:1px solid var(--line)}
+.page{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;padding:12px 4px;text-decoration:none}
+.client .page{padding:4px 0}
+.page:hover .p-name{text-decoration:underline;text-underline-offset:3px}
+.p-name{font-size:15px;font-weight:500}
+.p-path{grid-column:1;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--navy-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.status{grid-row:1/span 2;grid-column:2;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:5px 10px;white-space:nowrap}
+.status.live{background:var(--navy);color:var(--cream)}
+.status.draft{background:transparent;color:var(--navy);border:1.5px dashed var(--navy-soft)}
+.dot{width:8px;height:8px;border-radius:999px;display:inline-block}
+.dot.live{background:var(--navy)}
+.dot.draft{border:1.5px solid var(--navy);background:var(--yellow)}
+.status.live .dot{background:var(--yellow)}
+.page.is-draft .p-name{color:var(--navy-soft)}
+.empty{padding:40px 0;text-align:center;color:var(--navy-soft);font-size:15px}
+[hidden]{display:none!important}
+
+@media (max-width:860px){
+  .wrap{padding:40px 16px 72px}
+  .toolbar{margin:24px -16px 0;padding:12px 16px}
+  .summary{grid-template-columns:repeat(3,1fr)}
+  .mix{grid-column:1/-1}
+  .group>summary{grid-template-columns:auto 1fr;padding:18px}
+  .g-meta{grid-column:1/-1;justify-content:space-between}
+  .g-body{padding:0 18px 18px}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <div class="eyebrow">Proposed information architecture · Appendix</div>
+  <h1>Preserved employer and client pages</h1>
+  <p class="lede">These pages stay reachable by direct link but sit outside the public navigation. Grouped by purpose so it’s clear what’s core to clients, what’s campaign history, and what can likely be retired.</p>
+
+  <section class="summary" aria-label="Inventory summary">
+    <div class="stat"><b id="s-total">–</b><span>Inventory records</span></div>
+    <div class="stat"><b id="s-live">–</b><span><i class="dot live"></i>Live / redirected</span></div>
+    <div class="stat"><b id="s-draft">–</b><span><i class="dot draft"></i>Currently unpublished</span></div>
+    <div class="mix">
+      <div class="eyebrow">Mix by purpose</div>
+      <div class="mix-bar" id="mix-bar"></div>
+      <div class="mix-key" id="mix-key"></div>
+    </div>
+  </section>
+
+  <div class="toolbar" id="toolbar">
+    <label class="search">
+      <span aria-hidden="true" style="width:18px;height:18px;flex:none;background:var(--navy-soft);-webkit-mask:url('https://unpkg.com/lucide-static@0.544.0/icons/search.svg') center/contain no-repeat;mask:url('https://unpkg.com/lucide-static@0.544.0/icons/search.svg') center/contain no-repeat"></span>
+      <input id="q" type="search" placeholder="Search by client or page name" aria-label="Search pages">
+    </label>
+    <div class="seg" role="group" aria-label="Filter by status">
+      <button type="button" data-status="all" aria-pressed="true">All</button>
+      <button type="button" data-status="live" aria-pressed="false">Live</button>
+      <button type="button" data-status="draft" aria-pressed="false">Unpublished</button>
+    </div>
+    <div class="result-count" id="count" aria-live="polite"></div>
+  </div>
+
+  <div id="groups"></div>
+  <div class="empty" id="empty" hidden>No pages match that search.</div>
+</main>
+
+<script>
+// [name, path, live?, group, client]
+const PAGES = [
+["Walmart Mock up","/walmart-mockup/",1,"test"],
+["Walmart Benefit Puerto Rico — Spanish","/walmartpr/",1,"benefit","Walmart"],
+["Walmart Benefit Puerto Rico — English","/walmartpr-english/",1,"benefit","Walmart"],
+["Walmart Benefit","/walmart-benefit-details/",1,"benefit","Walmart"],
+["Blackstone Global Benefit","/activate-blackstone-global/",1,"benefit","Blackstone"],
+["Pendo Global Benefit","/activate-pendo-global/",1,"benefit","Pendo"],
+["Dexcom Global Benefit","/activate-dexcom-global/",1,"benefit","Dexcom"],
+["Huntington Global Benefit","/activate-huntington-global/",1,"benefit","Huntington"],
+["Flatiron Global Benefit","/activate-flatiron-global/",1,"benefit","Flatiron"],
+["Stellar Development Foundation Global Benefit","/activate-sdf-global/",1,"benefit","Stellar Development Foundation"],
+["Summit Partners Global Benefit","/activate-summitpartners-global/",1,"benefit","Summit Partners"],
+["Lockheed Martin","/lockheed-martin-benefit/",1,"benefit","Lockheed Martin"],
+["Rivian Global Benefit","/rivian-global-benefit/",0,"benefit","Rivian"],
+["Sprinklr Global Benefit","/activate-sprinklr-global/",1,"benefit","Sprinklr"],
+["Snowflake Global Benefit","/activate-snowflake-global/",1,"benefit","Snowflake"],
+["Tesla Benefit","/tesla-benefit/",1,"benefit","Tesla"],
+["Lyft Benefit","/activate-lyft-global/",1,"benefit","Lyft"],
+["Medtronic Benefit","/medtronic-benefit/",1,"benefit","Medtronic"],
+["Berkadia Benefits","/berkadiabenefits/",1,"benefit","Berkadia"],
+["Rivian Benefits","/rivianbenefits/",0,"benefit","Rivian"],
+["SpaceX Benefits","/spacexbenefits/",1,"benefit","SpaceX"],
+["NFP","/ (redirects to home)",1,"benefit","NFP"],
+["Princeton Benefit","/princeton-benefit/",1,"benefit","Princeton"],
+["Justworks","/justworks/",1,"benefit","Justworks"],
+["Members","/members/",1,"general"],
+["California Schools VEBA Benefit","/veba/",1,"benefit","California Schools VEBA"],
+["Kindbody Global Info Session","/kindbody-global",0,"campaign"],
+["Gladstone Health Fair Leads","/health-fair-gladstone/",0,"campaign"],
+["Generic Health Fair Leads","/health-fair/generic",0,"campaign"],
+["Pepsi Test Portal Updated","/pepsitestportal",0,"test"],
+["Tesla Health Fair Leads","/health-fair-tesla",0,"campaign"],
+["LGBTQ+ Family Building — CLA","/lgbtq-family-building-cla",0,"campaign"],
+["LinkedIn Test Thank You Page","/kindbody-check-benefits-thank-you/",0,"test"],
+["Employee Lead Page","/employeebenefitstestpage-1/",0,"test"],
+["Employer Webinar Thank You Page","/watch-employer-benefit-webinar/",0,"test"],
+["Simplified Employer Page","/employer-benefits-lp/",0,"general"],
+["Conference Board 2022","/conference-board-2022/",0,"campaign"],
+["San Diego Conference Board 2022","/sandiego-conferenceboard-2022/",0,"campaign"],
+["SD Conference Board Happy Hour","/sandiego-conferenceboard-happyhour-2022/",0,"campaign"],
+["Future Proof Ebook Confirmation","/ebook-confirmation-future-proof-your-benefits-strategy/",0,"test"],
+["MercerVIP Future Proof Webinar","/webinar-future-proof-your-benefit-strategy/",0,"campaign"],
+["Kind at Work Subscription","/kind-at-work-subscribe/",0,"general"],
+["Stifel Benefit One Pager","/stifel-benefit-one-pager/",0,"onepager"],
+["Tesla Benefit One Pager","/tesla-benefit-one-pager/",0,"onepager"],
+["Employer One Pagers Download","/employer-onepagers-download/",0,"onepager"],
+["At-Home Testing Webinar — Lead Gen","/employee/watch-webinar/at-home-testing/",0,"campaign"],
+["At-Home Testing Webinar — Watch","/employee/watch-webinar/at-home-testing/video/",0,"campaign"],
+["Egg Freezing Webinar — Watch","/employee/watch-webinar/egg-freezing/video/",0,"campaign"],
+["Same-Sex Female Webinar — Lead Gen","/employee/watch-webinar/same-sex-female/",0,"campaign"],
+["Egg Freezing Webinar — Lead Gen","/employee/watch-webinar/egg-freezing/video/",0,"campaign"],
+["Same-Sex Female Webinar — Watch","/employee/watch-webinar/same-sex-female/video/",0,"campaign"],
+["Radiology Partners Benefit One Pager","/radiology-partners-benefit-one-pager/",0,"onepager"],
+["Princeton Benefit One Pager","/princeton-one-pager/",0,"onepager"],
+["SpaceX Benefit One Pager","/spacex-one-pager/",0,"onepager"],
+["Employer One Pagers Download Page","/employer-onepagers/",0,"onepager"],
+["Employee Marketing","/educational-resources",0,"general"],
+["NIAW Share Your Pride","/niaw-share-your-pride-graphic/",0,"campaign"],
+["Looking for Benefits","/looking-for-benefits/",0,"general"],
+["Portland login v2","/portland-login-v2",0,"test"],
+["Kindbody Global Info Session Replay","/kindbody-global-replay",0,"campaign"],
+["Pepsi","/pepsitestportal-offline",0,"test"],
+["Coca-Cola Test Portal","/coca-cola-test-portal/",0,"test"],
+["August Activate Page for EMU","/2024-womens-equality",1,"general"],
+["Activate Kindbody Benefit","/activate",1,"general"],
+["Philips","/philips/",1,"benefit","Philips"],
+["Huntington Bank","/huntington-bank",1,"benefit","Huntington"],
+["Lyft","/lyft/",1,"benefit","Lyft"],
+["Lockheed Martin Benefits","/lockheed-martin/",1,"benefit","Lockheed Martin"],
+["GEICO Benefits","/geico-benefits/",1,"benefit","GEICO"],
+["Tesla","/tesla/",1,"benefit","Tesla"],
+["Medtronic","/medtronic/",1,"benefit","Medtronic"],
+].map(([name,path,live,group,client])=>({name,path,live:!!live,group,client}));
+
+// Groups are ordered by importance: what clients rely on first, cleanup candidates last.
+const GROUPS = [
+  {id:"benefit",  title:"Client benefit & activation pages", desc:"Employer-specific pages members use to learn about and activate their benefit. Grouped by client.", icon:"building-2", tint:"var(--yellow)", open:true},
+  {id:"general",  title:"General employer & member pages",   desc:"Shared entry points not tied to a single client.", icon:"users", tint:"#F9CDC6", open:true},
+  {id:"onepager", title:"Client one-pagers & downloads",     desc:"Sales and enablement collateral for specific accounts.", icon:"file-text", tint:"#DCDDEB", open:false},
+  {id:"campaign", title:"Campaigns, events & webinars",      desc:"Time-bound lead-gen pages: health fairs, conferences, webinars and awareness campaigns.", icon:"calendar", tint:"#E2DAD0", open:false},
+  {id:"test",     title:"Tests, mock-ups & thank-you pages", desc:"Utility pages kept for reference.", icon:"flask-conical", tint:"#EDEBE7", open:false, note:"Candidates to retire: none are needed for navigation, and most are unpublished tests or form confirmations."},
+];
+const MIX_COLORS = {benefit:"#272A5E",general:"#6E708F",onepager:"#A9ABC4",campaign:"#F9E168",test:"#E2DAD0"};
+
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const mask = n => `url('https://unpkg.com/lucide-static@0.544.0/icons/${n}.svg') center/contain no-repeat`;
+
+// Summary
+const live = PAGES.filter(p=>p.live).length;
+$("#s-total").textContent = PAGES.length;
+$("#s-live").textContent = live;
+$("#s-draft").textContent = PAGES.length - live;
+GROUPS.forEach(g=>{
+  const n = PAGES.filter(p=>p.group===g.id).length;
+  $("#mix-bar").insertAdjacentHTML("beforeend", `<i style="width:${n/PAGES.length*100}%;background:${MIX_COLORS[g.id]}" title="${esc(g.title)}: ${n}"></i>`);
+  $("#mix-key").insertAdjacentHTML("beforeend", `<span><i style="background:${MIX_COLORS[g.id]}"></i>${esc(g.title.split(" &")[0].split(" pages")[0])} · ${n}</span>`);
+});
+
+function pageRow(p){
+  return `<a class="page ${p.live?"":"is-draft"}" href="https://kindbody.com${p.path.split(" ")[0]}" target="_blank" rel="noreferrer">
+    <span class="p-name">${esc(p.name)}</span>
+    <span class="p-path">${esc(p.path)}</span>
+    <span class="status ${p.live?"live":"draft"}"><i class="dot ${p.live?"live":"draft"}"></i>${p.live?"Live":"Unpublished"}</span>
+  </a>`;
+}
+
+let status = "all", query = "";
+function render(){
+  const q = query.trim().toLowerCase();
+  const match = p => (status==="all" || (status==="live")===p.live) &&
+    (!q || p.name.toLowerCase().includes(q) || (p.client||"").toLowerCase().includes(q) || p.path.includes(q));
+  const openState = {};
+  document.querySelectorAll("#groups details").forEach(d=>openState[d.dataset.id]=d.open);
+  let shown = 0, html = "";
+  for (const g of GROUPS){
+    const all = PAGES.filter(p=>p.group===g.id), items = all.filter(match);
+    if (!items.length) continue;
+    shown += items.length;
+    const gl = all.filter(p=>p.live).length;
+    let body;
+    if (g.id==="benefit"){
+      const byClient = {};
+      items.forEach(p=>(byClient[p.client] ||= []).push(p));
+      const clients = Object.entries(byClient).sort((a,b)=>b[1].length-a[1].length || a[0].localeCompare(b[0]));
+      body = `<div class="clients">${clients.map(([c,ps])=>{
+        const total = all.filter(p=>p.client===c).length;
+        return `<div class="client"><h3>${esc(c)}${total>1?`<span class="dup" title="Multiple pages for one client: consider consolidating">${total} pages</span>`:""}</h3>
+        <ul>${ps.map(p=>`<li>${pageRow(p)}</li>`).join("")}</ul></div>`;}).join("")}</div>`;
+    } else {
+      body = `<ul class="rows">${items.map(p=>`<li>${pageRow(p)}</li>`).join("")}</ul>`;
+    }
+    const open = q || status!=="all" ? true : (g.id in openState ? openState[g.id] : g.open);
+    html += `<details class="group" data-id="${g.id}" ${open?"open":""}>
+      <summary>
+        <span class="g-icon" style="background:${g.tint}"><i style="-webkit-mask:${mask(g.icon)};mask:${mask(g.icon)}"></i></span>
+        <span><span class="g-title">${esc(g.title)}</span><div class="g-desc">${esc(g.desc)}</div></span>
+        <span class="g-meta"><span><b>${gl}</b> live · <b>${all.length-gl}</b> unpublished</span><i class="chev" aria-hidden="true"></i></span>
+      </summary>
+      <div class="g-body">${g.note?`<p class="retire-note">${esc(g.note)}</p>`:""}${body}</div>
+    </details>`;
+  }
+  $("#groups").innerHTML = html;
+  $("#empty").hidden = shown>0;
+  $("#count").textContent = `${shown} of ${PAGES.length}`;
+}
+
+$("#q").addEventListener("input", e=>{query=e.target.value; render();});
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+  status = b.dataset.status;
+  document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  render();
+}));
+new IntersectionObserver(([e])=>$("#toolbar").classList.toggle("stuck", e.intersectionRatio<1), {threshold:[1], rootMargin:"-1px 0px 0px 0px"}).observe($("#toolbar"));
+render();
+</script>
+</body>
+</html>
