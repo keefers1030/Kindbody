@@ -1,0 +1,27 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Dialog & tooltip" subtitle="Modal over a navy scrim; navy tooltip on hover" -->
+<!doctype html><html><head><meta charset="utf-8"><title>Overlay</title><link rel="stylesheet" href="../../styles.css"><style>html,body{margin:0}body{font-family:var(--font-sans);color:var(--text-primary);background:var(--kb-white);padding:22px 24px;box-sizing:border-box}.lbl{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--kb-grey-600);margin-bottom:10px}.row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.col{display:flex;flex-direction:column;gap:14px}a{color:var(--text-link)}a:hover{color:var(--text-link-hover)}</style></head><body><div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Dialog, Tooltip, Button, Input } = window.KindbodyDesignSystem_929fb0;
+function Demo(){
+  const [open,setOpen]=React.useState(true);
+  return (<div style={{position:'relative',height:286,background:'var(--kb-cream)',borderRadius:14,overflow:'hidden'}}>
+    <div style={{padding:20,display:'flex',gap:16,alignItems:'center'}}>
+      <Button variant="outline" size="sm" onClick={()=>setOpen(true)}>Open dialog</Button>
+      <Tooltip content="Anti-Müllerian hormone"><span style={{fontWeight:700,borderBottom:'2px dotted var(--kb-navy)',cursor:'help'}}>AMH</span></Tooltip>
+    </div>
+    {open ? <div style={{position:'absolute',inset:0}}>
+      <Dialog open onClose={()=>setOpen(false)} width={420} title="Start with the basics"
+        footer={<><Button variant="ghost" size="sm" onClick={()=>setOpen(false)}>Not now</Button><Button size="sm">Sign up</Button></>}
+        style={{position:'relative'}}>
+        <div style={{marginBottom:14}}>Sign up to watch “Fertility 101,” our free primer on how fertility works.</div>
+        <Input label="Email" type="email" required placeholder="you@example.com" />
+      </Dialog>
+    </div> : null}
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

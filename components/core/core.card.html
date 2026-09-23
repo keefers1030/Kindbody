@@ -1,0 +1,48 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Buttons, cards, badges & tags" subtitle="Button variants and sizes, IconButton, Card grounds, Badge, Tag, Icon" -->
+<!doctype html><html><head><meta charset="utf-8"><title>Core</title><link rel="stylesheet" href="../../styles.css"><style>html,body{margin:0}body{font-family:var(--font-sans);color:var(--text-primary);background:var(--kb-white);padding:22px 24px;box-sizing:border-box}.lbl{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--kb-grey-600);margin-bottom:10px}.row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.col{display:flex;flex-direction:column;gap:14px}a{color:var(--text-link)}a:hover{color:var(--text-link-hover)}</style></head><body><div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Button, IconButton, Card, Badge, Tag, Icon } = window.KindbodyDesignSystem_929fb0;
+function Demo(){
+  const [sel,setSel]=React.useState(true);
+  return (<div style={{display:'grid',gap:20}}>
+    <div><div className="lbl">Button — variants</div><div className="row">
+      <Button variant="primary">Get started</Button>
+      <Button variant="navy" iconRight="arrow-right">Schedule</Button>
+      <Button variant="outline">Services &amp; pricing</Button>
+      <Button variant="ghost">Learn more</Button>
+      <Button variant="primary" disabled>Disabled</Button>
+    </div></div>
+    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:20}}>
+      <div><div className="lbl">Sizes</div><div className="row">
+        <Button size="sm">Small</Button><Button size="md">Medium</Button><Button size="lg">Large</Button>
+      </div></div>
+      <div><div className="lbl">On navy · IconButton · Icon</div><div className="row" style={{background:'var(--kb-navy)',padding:'12px 14px',borderRadius:14}}>
+        <Button variant="outline-light" size="sm">Member portal</Button>
+        <IconButton icon="arrow-right" label="Next" variant="primary" size="sm" />
+        <IconButton icon="x" label="Close" variant="navy" size="sm" />
+        <Icon name="calendar" size={20} color="var(--kb-yellow)" />
+        <Icon name="map-pin" size={20} color="var(--kb-cream)" />
+      </div></div>
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:12}}>
+      <Card variant="elevated" padding={16} interactive><b style={{fontSize:13}}>Elevated</b><div style={{fontSize:12.5,color:'var(--text-muted)'}}>white + shadow</div></Card>
+      <Card variant="hairline" padding={16}><b style={{fontSize:13}}>Hairline</b><div style={{fontSize:12.5,color:'var(--text-muted)'}}>1px border</div></Card>
+      <Card variant="cream" padding={16}><b style={{fontSize:13}}>Cream</b><div style={{fontSize:12.5,color:'var(--text-muted)'}}>quiet inset</div></Card>
+      <Card variant="navy" padding={16}><b style={{fontSize:13}}>Navy</b><div style={{fontSize:12.5,opacity:.75}}>feature card</div></Card>
+    </div>
+    <div className="row">
+      <Badge tone="yellow">In-network</Badge><Badge tone="navy">Virtual</Badge><Badge tone="rose">New</Badge>
+      <Badge tone="success">Confirmed</Badge><Badge tone="warning">Pending</Badge><Badge tone="error">Action needed</Badge>
+      <span style={{width:14}} />
+      <Tag selected={sel} onClick={()=>setSel(!sel)}>Egg freezing</Tag>
+      <Tag onClick={()=>{}}>IVF</Tag>
+      <Tag onRemove={()=>{}}>New York, NY</Tag>
+    </div>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

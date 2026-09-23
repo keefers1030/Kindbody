@@ -1,0 +1,55 @@
+/* PRIMARY PALETTE — exact values from the Kindbody Brand Guidelines (2024-04-01, pg 11).
+   Yellow is the primary; cream, navy and rose are the primary neutrals. */
+:root{
+  --kb-yellow:#F9E168;            /* Pantone 2003C */
+  --kb-cream:#EFE9E2;
+  --kb-navy:#272A5E;              /* Pantone 2119C */
+  --kb-rose:#F9CDC6;              /* Pantone 2337C at 80% */
+
+  /* Derived tints/shades. NOT in the printed guidelines — added for UI states only. */
+  --kb-yellow-deep:#EFCF3C;       /* hover/press on yellow fills */
+  --kb-yellow-soft:#FDF3C9;       /* washes, selected rows */
+  --kb-navy-deep:#1B1D42;         /* press on navy fills */
+  --kb-navy-soft:#6E708F;         /* navy at reading-safe secondary weight */
+  --kb-cream-deep:#E2DAD0;        /* hairlines on cream */
+  --kb-rose-soft:#FDEAE6;
+  --kb-white:#FFFFFF;
+  --kb-off-white:#FAF8F5;
+  --kb-grey-100:#F2F1EF;
+  --kb-grey-200:#E3E1DE;
+  --kb-grey-400:#A9A6A1;
+  --kb-grey-600:#6B6864;
+
+  /* Semantic — UI only, derived. Kindbody has no published semantic palette. */
+  --kb-success:#2F6B4F;
+  --kb-success-soft:#E4EFE8;
+  --kb-warning:#9A6B12;
+  --kb-warning-soft:#FBF0D8;
+  --kb-error:#A8322B;
+  --kb-error-soft:#F8E4E2;
+  --kb-info:var(--kb-navy);
+  --kb-info-soft:#E7E8F0;
+
+  /* ALIASES */
+  --text-primary:var(--kb-navy);
+  --text-secondary:#565879;
+  --text-muted:var(--kb-grey-600);
+  --text-on-navy:var(--kb-cream);
+  --text-on-yellow:var(--kb-navy);
+  --text-link:var(--kb-navy);
+  --text-link-hover:#4A4D80;
+
+  --surface-page:var(--kb-cream);
+  --surface-card:var(--kb-white);
+  --surface-raised:var(--kb-off-white);
+  --surface-inverse:var(--kb-navy);
+  --surface-accent:var(--kb-yellow);
+  --surface-accent-soft:var(--kb-yellow-soft);
+  --surface-rose:var(--kb-rose);
+
+  --border-subtle:var(--kb-cream-deep);
+  --border-default:var(--kb-grey-200);
+  --border-strong:var(--kb-navy);
+
+  --focus-ring:var(--kb-navy);
+}

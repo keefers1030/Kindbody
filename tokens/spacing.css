@@ -1,0 +1,24 @@
+/* 8px base with a 4px half-step. Generous, airy layouts — Kindbody print and web both
+   run wide gutters and large section rhythm. */
+:root{
+  --space-0:0;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:24px;
+  --space-6:32px;
+  --space-7:40px;
+  --space-8:56px;
+  --space-9:72px;
+  --space-10:96px;
+  --space-11:128px;
+
+  --section-y:96px;          /* vertical rhythm between marketing sections */
+  --section-y-tight:56px;
+  --gutter:32px;             /* page side padding, desktop */
+  --gutter-mobile:20px;
+  --container-max:1240px;
+  --measure:64ch;            /* max reading width for body copy */
+  --logo-clear-space:0.5em;  /* = width of the parenthesis, per guidelines pg 7 */
+}

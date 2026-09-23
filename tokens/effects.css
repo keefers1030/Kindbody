@@ -1,0 +1,31 @@
+/* Radii, borders, shadows, motion. Kindbody geometry is soft but not pill-happy:
+   generous radii on cards and images, fully-round pills only on buttons and tags. */
+:root{
+  --radius-xs:4px;
+  --radius-sm:8px;
+  --radius-md:14px;
+  --radius-lg:24px;
+  --radius-xl:36px;
+  --radius-pill:999px;
+  --radius-image:20px;
+
+  --border-hairline:1px;
+  --border-thick:2px;
+
+  /* Shadows are used sparingly and are warm/neutral, never blue-black. */
+  --shadow-none:none;
+  --shadow-card:0 1px 2px rgba(39,42,94,.04),0 8px 24px rgba(39,42,94,.06);
+  --shadow-raised:0 2px 4px rgba(39,42,94,.05),0 18px 40px rgba(39,42,94,.10);
+  --shadow-overlay:0 24px 64px rgba(27,29,66,.22);
+  --shadow-focus:0 0 0 3px rgba(39,42,94,.18);
+
+  /* Motion: short, eased, no bounce. Fades and small translations only. */
+  --ease-standard:cubic-bezier(.2,.6,.2,1); /* @kind other */
+  --ease-out:cubic-bezier(0,.6,.3,1); /* @kind other */
+  --duration-fast:120ms; /* @kind other */
+  --duration-base:200ms; /* @kind other */
+  --duration-slow:420ms; /* @kind other */
+
+  --overlay-scrim:rgba(27,29,66,.55);
+  --image-protection:linear-gradient(180deg,rgba(27,29,66,0) 35%,rgba(27,29,66,.55) 100%); /* @kind color */
+}

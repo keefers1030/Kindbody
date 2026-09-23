@@ -1,0 +1,18 @@
+/* Kindbody brand webfonts. Licensed retail faces — do not redistribute outside Kindbody work.
+   Domaine Display (Klim) = headlines. Gotham (H&Co) = subheads + body.
+   Founders Grotesk Text (Klim) was supplied alongside; used on newer web surfaces. */
+@font-face{font-family:"Domaine Display";src:url("../assets/fonts/DomaineDisplay-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Domaine Display";src:url("../assets/fonts/DomaineDisplay-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Domaine Display";src:url("../assets/fonts/DomaineDisplay-Semibold.otf") format("opentype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Domaine Display";src:url("../assets/fonts/DomaineDisplay-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Domaine Display";src:url("../assets/fonts/DomaineDisplay-MediumItalic.otf") format("opentype");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Gotham";src:url("../assets/fonts/Gotham-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Gotham";src:url("../assets/fonts/Gotham-Book.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Gotham";src:url("../assets/fonts/Gotham-BookItalic.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Gotham";src:url("../assets/fonts/Gotham-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Gotham";src:url("../assets/fonts/Gotham-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Gotham";src:url("../assets/fonts/Gotham-Black.otf") format("opentype");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Founders Grotesk Text";src:url("../assets/fonts/FoundersGroteskText-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Founders Grotesk Text";src:url("../assets/fonts/FoundersGroteskText-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Founders Grotesk Text";src:url("../assets/fonts/FoundersGroteskText-Semibold.otf") format("opentype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Founders Grotesk Text";src:url("../assets/fonts/FoundersGroteskText-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
