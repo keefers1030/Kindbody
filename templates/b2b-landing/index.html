@@ -15,11 +15,12 @@
 <!-- @template name="B2B benefits landing page" description="Consultant-first Kindbody.com homepage: benefits value proposition up front, member and provider entry points preserved." -->
 <helmet>
 <script src="./ds-base.js"></script>
-<style>*{box-sizing:border-box}body{margin:0;background:#EFE9E2}@keyframes kbRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}@keyframes kbFade{from{opacity:0}to{opacity:1}}@keyframes kbWipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}@keyframes kbZoom{from{transform:scale(1.08)}to{transform:none}}@media (max-width:860px){.kb-hero{display:block!important;min-height:0!important}.kb-hero-photo{position:relative!important;height:320px}.kb-hero-fade{background:linear-gradient(0deg,rgba(239,233,226,1) 0%,rgba(239,233,226,0) 35%)!important}.kb-hero-inner{padding:8px 20px 40px!important}.kb-hero-cards{position:static!important;transform:none!important;margin-top:32px;flex-direction:column}.kb-hero-cards>div{width:auto!important}}@media (prefers-reduced-motion:reduce){[data-kb-hero],[data-kb-hero] *{animation:none!important}}[data-reveal]{opacity:0}[data-reveal].kb-in{opacity:1}[data-reveal].kb-in.kb-anim{animation:kbRise .62s cubic-bezier(.2,.6,.2,1) forwards}@media print{[data-reveal]{opacity:1!important}}a{color:#272A5E}a:hover{color:var(--text-link-hover)}footer a:hover{color:var(--kb-yellow)!important}button[data-kb-tab="true"]{background:#272A5E!important;color:#EFE9E2!important;border-color:#272A5E!important}</style>
+<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(".kb-burger a");if(a){var d=a.closest("details");if(d)d.open=false}});</script>
+<style>*{box-sizing:border-box}body{margin:0;background:#EFE9E2}@keyframes kbRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}@keyframes kbFade{from{opacity:0}to{opacity:1}}@keyframes kbWipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}@keyframes kbZoom{from{transform:scale(1.08)}to{transform:none}}.kb-burger{display:none}.kb-burger>summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:999px}.kb-burger>summary::-webkit-details-marker{display:none}.kb-burger-icon{display:block;width:26px;height:26px;background:var(--kb-navy);-webkit-mask:url('https://unpkg.com/lucide-static@0.544.0/icons/menu.svg') center/contain no-repeat;mask:url('https://unpkg.com/lucide-static@0.544.0/icons/menu.svg') center/contain no-repeat}.kb-burger[open] .kb-burger-icon{-webkit-mask:url('https://unpkg.com/lucide-static@0.544.0/icons/x.svg') center/contain no-repeat;mask:url('https://unpkg.com/lucide-static@0.544.0/icons/x.svg') center/contain no-repeat}.kb-burger-panel{position:absolute;left:0;right:0;top:100%;background:var(--kb-white);padding:8px 20px 28px;border-bottom:1px solid var(--kb-cream-deep);box-shadow:0 18px 30px rgba(39,42,94,.12);max-height:calc(100vh - 70px);overflow:auto}@media (max-width:860px){.kb-util,.kb-nav,.kb-hdr-ctas{display:none!important}.kb-burger{display:block;margin-left:auto}header>div{min-height:68px!important;padding:0 20px!important;flex-wrap:nowrap!important}}@media (max-width:860px){.kb-hero{display:block!important;min-height:0!important}.kb-hero-photo{position:relative!important;height:320px}.kb-hero-fade{background:linear-gradient(0deg,rgba(239,233,226,1) 0%,rgba(239,233,226,0) 35%)!important}.kb-hero-inner{padding:8px 20px 40px!important}.kb-hero-cards{position:static!important;transform:none!important;margin-top:32px;flex-direction:column}.kb-hero-cards>div{width:auto!important}}@media (prefers-reduced-motion:reduce){[data-kb-hero],[data-kb-hero] *{animation:none!important}}[data-reveal]{opacity:0}[data-reveal].kb-in{opacity:1}[data-reveal].kb-in.kb-anim{animation:kbRise .62s cubic-bezier(.2,.6,.2,1) forwards}@media print{[data-reveal]{opacity:1!important}}a{color:#272A5E}a:hover{color:var(--text-link-hover)}footer a:hover{color:var(--kb-yellow)!important}button[data-kb-tab="true"]{background:#272A5E!important;color:#EFE9E2!important;border-color:#272A5E!important}</style>
 </helmet>
 <div style="font-family:var(--font-sans);color:var(--kb-navy);background:var(--kb-cream);overflow-x:hidden">
 
-<div style="background:var(--kb-navy);color:var(--kb-cream)">
+<div class="kb-util" style="background:var(--kb-navy);color:var(--kb-cream)">
 <div style="max-width:1240px;margin:0 auto;padding:10px 32px;display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:flex-end;font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase">
 <a href="#activate" style="color:inherit;text-decoration:none">Activate my benefit</a>
 <a href="https://kindbody.com/scheduling/location-select/all/" style="color:inherit;text-decoration:none">Schedule an appointment</a>
@@ -30,13 +31,33 @@
 <header style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--kb-cream-deep)">
 <div style="max-width:1240px;margin:0 auto;padding:0 32px;min-height:78px;display:flex;align-items:center;gap:36px;flex-wrap:wrap">
 <a href="#top" style="line-height:0;flex:0 0 auto"><img src="../../assets/logos/kindbody-logo-navy.svg" alt="Kindbody" style="display:block;width:150px"></a>
-<nav style="display:flex;gap:26px;flex:1;font-size:14.5px;font-weight:500;flex-wrap:wrap">
+<nav class="kb-nav" style="display:flex;gap:26px;flex:1;font-size:14.5px;font-weight:500;flex-wrap:wrap">
 <a href="#solution" style="text-decoration:none;color:var(--kb-navy)">Our solution</a>
 <a href="#audiences" style="text-decoration:none;color:var(--kb-navy)">Who we support</a>
 <a href="#difference" style="text-decoration:none;color:var(--kb-navy)">Why Kindbody</a>
 <a href="#resources" style="text-decoration:none;color:var(--kb-navy)">Resources</a>
 </nav>
-<div style="display:flex;gap:12px;align-items:center;flex:0 0 auto">
+<details class="kb-burger">
+<summary aria-label="Menu"><span class="kb-burger-icon" aria-hidden="true"></span></summary>
+<div class="kb-burger-panel">
+<nav aria-label="Mobile">
+<a href="#solution" style="display:block;padding:14px 0;font-size:17px;font-weight:500;color:var(--kb-navy);text-decoration:none;border-bottom:1px solid var(--kb-cream-deep)">Our solution</a>
+<a href="#audiences" style="display:block;padding:14px 0;font-size:17px;font-weight:500;color:var(--kb-navy);text-decoration:none;border-bottom:1px solid var(--kb-cream-deep)">Who we support</a>
+<a href="#difference" style="display:block;padding:14px 0;font-size:17px;font-weight:500;color:var(--kb-navy);text-decoration:none;border-bottom:1px solid var(--kb-cream-deep)">Why Kindbody</a>
+<a href="#resources" style="display:block;padding:14px 0;font-size:17px;font-weight:500;color:var(--kb-navy);text-decoration:none;border-bottom:1px solid var(--kb-cream-deep)">Resources</a>
+</nav>
+<div style="display:grid;gap:10px;margin-top:20px">
+<a href="https://portal.kindbody.com/" style="font-family:var(--font-sans);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border-radius:999px;padding:14px 20px;line-height:1;text-align:center;color:var(--kb-navy);background:var(--kb-yellow);border:2px solid var(--kb-yellow)">Member portal</a>
+<a href="https://pcmp.kindbody.com/" style="font-family:var(--font-sans);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border-radius:999px;padding:14px 20px;line-height:1;text-align:center;color:var(--kb-navy);border:2px solid var(--kb-navy)">Provider Portal</a>
+</div>
+<div style="margin-top:18px">
+<a href="#activate" style="display:block;padding:8px 0;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--kb-navy);text-decoration:none">Activate my benefit</a>
+<a href="https://kindbody.com/scheduling/location-select/all/" style="display:block;padding:8px 0;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--kb-navy);text-decoration:none">Schedule an appointment</a>
+<a href="#sales" style="display:block;padding:8px 0;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--kb-navy);text-decoration:none">Talk to Sales</a>
+</div>
+</div>
+</details>
+<div class="kb-hdr-ctas" style="display:flex;gap:12px;align-items:center;flex:0 0 auto">
 <a href="https://pcmp.kindbody.com/" style="font-family:var(--font-sans);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--kb-navy);border:2px solid var(--kb-navy);border-radius:999px;padding:11px 20px;line-height:1">Provider Portal</a>
 <a href="https://portal.kindbody.com/" style="font-family:var(--font-sans);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--kb-navy);background:var(--kb-yellow);border:2px solid var(--kb-yellow);border-radius:999px;padding:11px 20px;line-height:1">Member portal</a>
 </div>
@@ -49,7 +70,7 @@
 <div data-kb-hero="1" style="position:absolute;inset:0;background:url('../../assets/imagery/hero-front-desk.webp') 72% center/cover;animation:kbZoom 2.2s cubic-bezier(.2,.6,.2,1) both"></div>
 <div class="kb-hero-fade" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(239,233,226,.94) 0%,rgba(239,233,226,.86) 30%,rgba(239,233,226,.4) 46%,rgba(239,233,226,0) 60%)"></div>
 </div>
-<div class="kb-hero-inner" style="position:relative;z-index:1;width:100%;max-width:1240px;margin:0 auto;padding:72px 32px 120px">
+<div class="kb-hero-inner" style="position:relative;z-index:1;width:100%;max-width:1240px;margin:0 auto;padding:48px 32px 104px">
 <div class="kb-hero-copy" style="max-width:560px">
 <div data-kb-hero="1" style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--kb-navy);opacity:1;animation:kbRise .5s cubic-bezier(.2,.6,.2,1) .3s both">Fertility and family-building benefits</div>
 <h1 data-kb-hero="1" style="margin:18px 0 0;font-family:var(--font-display);font-weight:700;font-size:clamp(40px,5.2vw,68px);line-height:1.03;letter-spacing:.01em;text-wrap:pretty;opacity:1;animation:kbRise .62s cubic-bezier(.2,.6,.2,1) .38s both">Better care.<br><span style="font-style:italic;font-weight:500">Smarter benefits.</span></h1>
@@ -57,9 +78,12 @@
 <div data-kb-hero="1" style="margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;opacity:1;animation:kbRise .62s cubic-bezier(.2,.6,.2,1) .54s both">
 <a href="#sales" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--kb-navy);background:var(--kb-yellow);border:2px solid var(--kb-yellow);border-radius:999px;padding:14px 24px;line-height:1">Explore Kindbody for Your Organization<span aria-hidden="true" style="display:block;flex:none;width:16px;height:16px;background-color:currentColor;-webkit-mask:url('https://unpkg.com/lucide-static@0.544.0/icons/arrow-right.svg') center/contain no-repeat;mask:url('https://unpkg.com/lucide-static@0.544.0/icons/arrow-right.svg') center/contain no-repeat"></span></a>
 </div>
-<div data-kb-hero="1" style="margin-top:40px;padding-top:24px;border-top:1px solid rgba(39,42,94,.18);display:flex;gap:14px 34px;flex-wrap:wrap;font-size:13.5px;font-weight:500;color:var(--kb-navy);opacity:1;animation:kbFade .8s ease .7s both">
-<span>High member satisfaction</span><span>Utilization-based pricing</span><span>Bundled rates</span><span>Nationwide access</span>
-</div>
+<ul data-kb-hero="1" style="list-style:none;margin:28px 0 0;padding:0;display:grid;gap:8px;font-size:15px;font-weight:500;color:var(--kb-navy);opacity:1;animation:kbFade .8s ease .7s both">
+<li style="display:flex;align-items:center;gap:12px"><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:var(--kb-yellow)"><span style="display:block;width:14px;height:14px;background-color:var(--kb-navy);-webkit-mask:url('https://unpkg.com/lucide-static@0.544.0/icons/check.svg') center/contain no-repeat;mask:url('https://unpkg.com/lucide-static@0.544.0/icons/check.svg') center/contain no-repeat"></span></span>High member satisfaction</li>
+<li style="display:flex;align-items:center;gap:12px"><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:var(--kb-yellow)"><span style="display:block;width:14px;height:14px;background-color:var(--kb-navy);-webkit-mask:url('https://unpkg.com/lucide-static@0.544.0/icons/check.svg') center/contain no-repeat;mask:url('https://unpkg.com/lucide-static@0.544.0/icons/check.svg') center/contain no-repeat"></span></span>Utilization-based pricing</li>
+<li style="display:flex;align-items:center;gap:12px"><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:var(--kb-yellow)"><span style="display:block;width:14px;height:14px;background-color:var(--kb-navy);-webkit-mask:url('https://unpkg.com/lucide-static@0.544.0/icons/check.svg') center/contain no-repeat;mask:url('https://unpkg.com/lucide-static@0.544.0/icons/check.svg') center/contain no-repeat"></span></span>Bundled rates</li>
+<li style="display:flex;align-items:center;gap:12px"><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:var(--kb-yellow)"><span style="display:block;width:14px;height:14px;background-color:var(--kb-navy);-webkit-mask:url('https://unpkg.com/lucide-static@0.544.0/icons/check.svg') center/contain no-repeat;mask:url('https://unpkg.com/lucide-static@0.544.0/icons/check.svg') center/contain no-repeat"></span></span>Nationwide access</li>
+</ul>
 </div>
 <div class="kb-hero-cards" style="position:absolute;right:32px;bottom:48px;display:flex;gap:14px">
 <div data-kb-hero="1" style="display:flex;align-items:center;gap:12px;max-width:270px;padding:10px 18px 10px 10px;background:color-mix(in srgb,var(--kb-yellow) 86%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 8px 24px rgba(39,42,94,.14);animation:kbRise .62s cubic-bezier(.2,.6,.2,1) .8s both">
@@ -153,7 +177,7 @@
 </div>
 </section>
 
-<section id="solution" style="background:var(--kb-yellow);padding:88px 0">
+<section id="solution" style="background:color-mix(in srgb,var(--kb-yellow) 35%,var(--kb-cream));padding:88px 0">
 <div style="max-width:1240px;margin:0 auto;padding:0 32px">
 <div data-reveal>
 <div style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">The pricing model</div>
@@ -176,12 +200,12 @@
 <p style="margin:12px 0 0;font-size:16px;line-height:1.55;color:var(--text-secondary)">Choose coverage rules and services that fit your population, while preserving a consistent member experience.</p>
 </div>
 </div>
-<div style="margin-top:40px;background:rgba(39,42,94,.08);border-radius:20px;padding:28px 32px;display:flex;gap:18px;flex-wrap:wrap;align-items:center" data-reveal>
-<span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">One connected model</span>
-<span style="font-size:16px">Benefit design</span><span style="opacity:.5">&rarr;</span>
-<span style="font-size:16px">Navigation</span><span style="opacity:.5">&rarr;</span>
-<span style="font-size:16px">Network access</span><span style="opacity:.5">&rarr;</span>
-<span style="font-size:16px">Clinical care</span><span style="opacity:.5">&rarr;</span>
+<div style="margin-top:40px;background:var(--kb-navy);color:var(--kb-white);border-radius:20px;padding:28px 32px;display:flex;gap:18px;flex-wrap:wrap;align-items:center" data-reveal>
+<span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--kb-yellow)">One connected model</span>
+<span style="font-size:16px">Benefit design</span><span aria-hidden="true" style="color:var(--kb-yellow);font-weight:700">&rarr;</span>
+<span style="font-size:16px">Navigation</span><span aria-hidden="true" style="color:var(--kb-yellow);font-weight:700">&rarr;</span>
+<span style="font-size:16px">Network access</span><span aria-hidden="true" style="color:var(--kb-yellow);font-weight:700">&rarr;</span>
+<span style="font-size:16px">Clinical care</span><span aria-hidden="true" style="color:var(--kb-yellow);font-weight:700">&rarr;</span>
 <span style="font-size:16px">Reporting</span>
 </div>
 </div>
